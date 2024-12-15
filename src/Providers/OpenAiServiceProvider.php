@@ -3,10 +3,10 @@
 namespace OpenAiPackage\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use OpenAI\Laravel\TechOpenAiServiceProvider;
+
 use OpenAiPackage\Services\OpenService;
 
-class TechOpenAiServiceProvider extends ServiceProvider
+class OpenAiServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -14,7 +14,7 @@ class TechOpenAiServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Register OpenAI service provider
-        $this->app->register(TechOpenAiServiceProvider::class);
+        $this->app->register(OpenAIServiceProvider::class);
 
         // Bind the OpenService
         $this->app->singleton('openservice', function ($app) {
@@ -33,6 +33,5 @@ class TechOpenAiServiceProvider extends ServiceProvider
         // ], 'config');
     }
 }
-
 
 ?>
