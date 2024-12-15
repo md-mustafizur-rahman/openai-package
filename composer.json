@@ -1,0 +1,29 @@
+{
+    "name": "your-vendor/openai-package",
+    "description": "A Laravel package for AI services.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OpenAiPackage\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^10.0",
+        "openai-php/laravel": "^0.10.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenAiPackage\\Providers\\OpenAiServiceProvider",
+                "OpenAI\\Laravel\\OpenAIServiceProvider"
+            ],
+            "aliases": {
+                "OpenAi": "OpenAiPackage\\Facades\\OpenAi"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
